@@ -15,7 +15,8 @@ You can achieve the same result _with_ a repository cloning
 ```bash
 git clone https://github.com/VCityTeam/UD-VCity-Vegetation-LasToMesh-docker.git
 cd UD-VCity-Vegetation-LasToMesh-docker
-
+```
+```bash
 docker build -t vegetation-lastomesh ./Context
 ```
 
