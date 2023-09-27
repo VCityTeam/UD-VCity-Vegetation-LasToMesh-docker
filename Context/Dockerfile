@@ -22,4 +22,8 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
   libgomp1 \
   && rm -rf /var/lib/apt/lists/*
 
-ENTRYPOINT ["python3.9", "mainCLI.py"]
+# Arguments for the execution
+ENV CELL_SIZE=${CELL_SIZE}
+ENV VERBOSE=${VERBOSE}
+
+CMD  [ "sh", "-c", "python3.9 mainCLI.py -i /inputs -o /outputs -c ${CELL_SIZE} ${VERBOSE}"]
