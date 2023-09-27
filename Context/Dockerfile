@@ -23,7 +23,8 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
   && rm -rf /var/lib/apt/lists/*
 
 # Arguments for the execution
+ENV FILE_NAME=${FILE_NAME}
 ENV CELL_SIZE=${CELL_SIZE}
 ENV VERBOSE=${VERBOSE}
 
-CMD  [ "sh", "-c", "python3.9 mainCLI.py -i /inputs -o /outputs -c ${CELL_SIZE} ${VERBOSE}"]
+CMD  [ "sh", "-c", "python3.9 mainCLI.py -i /inputs/${FILE_NAME} -o /outputs/ -c ${CELL_SIZE} ${VERBOSE}"]
